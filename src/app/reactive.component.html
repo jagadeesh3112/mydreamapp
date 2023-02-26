@@ -1,0 +1,24 @@
+<form [formGroup]="signupform">
+    <div class="form-group">
+        <label>Enter Name</label>
+        <input type="text" class="from-control" name="name" formControlName="name"
+        >
+        <p *ngIf="signupform.get('name')?.hasError('required')">Name is required</p>
+    </div>
+    <div class="form-group">
+        <label>Enter Adress</label>
+        <input type="text" class="from-control" name="address" formControlName="address"
+        >
+    </div>
+    <div class="form-group">
+        <label>Enter Telephone</label>
+        <input type="text" class="from-control" name="phone" formControlName="telephone"
+        >
+    </div>
+    <div class="form-group">
+        <label>Enter Email</label>
+        <input type="email" class="from-control" name="email" formControlName="email"
+        >
+    </div>
+    <button>Submit</button>
+</form>

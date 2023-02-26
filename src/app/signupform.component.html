@@ -1,0 +1,35 @@
+<form (ngSubmit) = "postform()">
+    <div class="form-group">
+        <label>Enter Name</label>
+        <input type="text" class="from-control" name="name" 
+        [(ngModel)]="name" required
+
+        #username="ngModel"
+        >
+        <p *ngIf="username.errors?.['required']">Name is Mandatory!!</p>
+    </div>
+    <div class="form-group">
+        <label>Enter Adress</label>
+        <input type="text" class="from-control" name="address" 
+        [(ngModel)]="address"
+        >
+    </div>
+    <div class="form-group">
+        <label>Enter Telephone</label>
+        <input type="text" class="from-control" name="phone" 
+        [(ngModel)]="phone"
+        >
+    </div>
+    <div class="form-group">
+        <label>Enter Email</label>
+        <input type="email" class="from-control" name="email"
+
+        #uemail="ngModel"
+        [(ngModel)]="email" required
+        [email]="true"
+        >
+        <p *ngIf="uemail.errors?.['required']">Email is mandatory!!</p>
+        <p *ngIf="uemail.errors?.['email']">Email is not valid</p>
+    </div>
+    <button>Submit</button>
+</form>
